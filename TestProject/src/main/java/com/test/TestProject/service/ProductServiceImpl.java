@@ -15,7 +15,7 @@ public class ProductServiceImpl implements ProductServiceInterface{
 		RestTemplate restTemplate = new RestTemplate();
 		ProductService productService = restTemplate.getForObject("https://jl-nonprod-syst.apigee.net/v1/categories/600001506/products?key=2ALHCAAs6ikGRBoy6eTHA58RaG097Fma",ProductService.class);
 
-		return ResponseEntity.ok().body(productService.toString());
+		return ResponseEntity.ok().body(productService);
 	}
 	
 
