@@ -3,7 +3,7 @@ package com.test.TestProject.beans;
 import java.util.ArrayList;
 
 public class ProductService {
-	ArrayList < Object > products = new ArrayList < Object > ();
+	ArrayList < Product > products = new ArrayList < Product > ();
 	 ArrayList < Object > facets = new ArrayList < Object > ();
 	 private String categoryTitle;
 	 private float childCategoriesCount;
@@ -21,12 +21,21 @@ public class ProductService {
 
 
 	 // Getter Methods 
+	 
 
 	 public String getCategoryTitle() {
 	  return categoryTitle;
 	 }
 
-	 public float getChildCategoriesCount() {
+	 public ArrayList<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(ArrayList<Product> products) {
+		this.products = products;
+	}
+
+	public float getChildCategoriesCount() {
 	  return childCategoriesCount;
 	 }
 
@@ -111,21 +120,29 @@ public class ProductService {
 	 public void setEndecaCanonical(String endecaCanonical) {
 	  this.endecaCanonical = endecaCanonical;
 	 }
-
-	@Override
-	public String toString() {
-		return "ProductService [products=" + products + ", facets=" + facets
-				+ ", categoryTitle=" + categoryTitle
-				+ ", childCategoriesCount=" + childCategoriesCount
-				+ ", SeoInformationObject=" + SeoInformationObject
-				+ ", results=" + results + ", pagesAvailable=" + pagesAvailable
-				+ ", crumbs=" + crumbs + ", dynamicBannerId=" + dynamicBannerId
-				+ ", seoBannerId=" + seoBannerId + ", redirectUrl="
-				+ redirectUrl + ", staticLinks=" + staticLinks
-				+ ", selectedDept=" + selectedDept + ", multiCatSelected="
-				+ multiCatSelected + ", endecaCanonical=" + endecaCanonical
-				+ "]";
 	}
-	 
-	 
-}
+	 class SeoInformation {
+	 private String title;
+	 private String description;
+
+
+	 // Getter Methods 
+
+	 public String getTitle() {
+	  return title;
+	 }
+
+	 public String getDescription() {
+	  return description;
+	 }
+
+	 // Setter Methods 
+
+	 public void setTitle(String title) {
+	  this.title = title;
+	 }
+
+	 public void setDescription(String description) {
+	  this.description = description;
+	 }
+	}
