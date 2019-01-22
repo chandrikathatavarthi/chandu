@@ -3,7 +3,7 @@ package com.test.TestProject.beans;
 import java.util.ArrayList;
 
 public class ProductService {
-	ArrayList < Product > products = new ArrayList < Product > ();
+	ArrayList < Object > products = new ArrayList < Object > ();
 	 ArrayList < Object > facets = new ArrayList < Object > ();
 	 private String categoryTitle;
 	 private float childCategoriesCount;
@@ -19,23 +19,24 @@ public class ProductService {
 	 private String multiCatSelected;
 	 private String endecaCanonical;
 
+	 
 
 	 // Getter Methods 
 	 
 
-	 public String getCategoryTitle() {
-	  return categoryTitle;
-	 }
-
-	 public ArrayList<Product> getProducts() {
+	 public ArrayList<Object> getProducts() {
 		return products;
 	}
 
-	public void setProducts(ArrayList<Product> products) {
+	public void setProducts(ArrayList<Object> products) {
 		this.products = products;
 	}
 
-	public float getChildCategoriesCount() {
+	public String getCategoryTitle() {
+	  return categoryTitle;
+	 }
+
+	 public float getChildCategoriesCount() {
 	  return childCategoriesCount;
 	 }
 

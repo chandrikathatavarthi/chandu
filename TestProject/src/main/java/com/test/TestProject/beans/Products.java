@@ -1,5 +1,6 @@
 package com.test.TestProject.beans;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Products {
@@ -7,19 +8,19 @@ public class Products {
 	
 	 private String productId;
 	 private String title;
-	 private ColorSwatches[] colorSwatches;
+	 private  ArrayList < ColorSwatches > colorSwatches;
 	 private String nowPrice;
 	 private String priceLabel;
 	 
 	 
-	public Products(String productId, String title) {
+	
+	
+	public Products() {
 		super();
-		this.productId = productId;
-		this.title = title;
 	}
-
 	public Products(String productId, String title,
-			ColorSwatches[] colorSwatches, String nowPrice, String priceLabel) {
+			ArrayList<ColorSwatches> colorSwatches, String nowPrice,
+			String priceLabel) {
 		super();
 		this.productId = productId;
 		this.title = title;
@@ -27,7 +28,12 @@ public class Products {
 		this.nowPrice = nowPrice;
 		this.priceLabel = priceLabel;
 	}
-	
+	@Override
+	public String toString() {
+		return "Products [productId=" + productId + ", title=" + title
+				+ ", colorSwatches=" + colorSwatches + ", nowPrice=" + nowPrice
+				+ ", priceLabel=" + priceLabel + "]";
+	}
 	public String getProductId() {
 		return productId;
 	}
@@ -40,10 +46,12 @@ public class Products {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public ColorSwatches[] getColorSwatches() {
+
+
+	public ArrayList<ColorSwatches> getColorSwatches() {
 		return colorSwatches;
 	}
-	public void setColorSwatches(ColorSwatches[] colorSwatches) {
+	public void setColorSwatches(ArrayList<ColorSwatches> colorSwatches) {
 		this.colorSwatches = colorSwatches;
 	}
 	public String getNowPrice() {
@@ -58,11 +66,6 @@ public class Products {
 	public void setPriceLabel(String priceLabel) {
 		this.priceLabel = priceLabel;
 	}
-	@Override
-	public String toString() {
-		return "ProductResponse [productId=" + productId + ", title=" + title
-				+ ", colorSwatches=" + Arrays.toString(colorSwatches)
-				+ ", nowPrice=" + nowPrice + ", priceLabel=" + priceLabel + "]";
-	}
+	
 
 }

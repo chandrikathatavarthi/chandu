@@ -1,5 +1,7 @@
 package com.test.TestProject.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
@@ -16,17 +18,27 @@ import com.test.TestProject.beans.Products;
 public class ProductServiceImpl implements ProductServiceInterface{
 
 	public ResponseEntity<?> getProducts() {
-		
+		List<Products> products = new ArrayList<Products>();
 		RestTemplate restTemplate = new RestTemplate();
-		ProductResponse pr=new ProductResponse();
 		ProductService productService = restTemplate.getForObject("https://jl-nonprod-syst.apigee.net/v1/categories/600001506/products?key=2ALHCAAs6ikGRBoy6eTHA58RaG097Fma",ProductService.class);
-	
-		/*productService.getProducts().stream().forEach(product->
-		pr.setProducts(new Products[0]{new Products(product.getProductId(),product.getTitle())}));*/
 		
+		  List<Object> list = productService.getProducts();
+		 
+/*
+
+		for(Object p:list){
+			
+			Product product=(Product)p;
+			Products pr=new Products();
+			pr.setProductId(product.getProductId());
+			pr.setTitle(product.getTitle());
+			products.add(pr);
+			
+		}
 		
+		*/
 		
-		return ResponseEntity.ok().body(pr);
+		return ResponseEntity.ok().body(list);
 	}
 	
 

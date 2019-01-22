@@ -1,18 +1,21 @@
 package com.test.TestProject.beans;
 
+import java.util.ArrayList;
+
 
 public class ProductResponse {
 	
-	private Products[] products;
+	private ArrayList<Products> products;
 
-	public Products[] getProducts() {
+	public ArrayList<Products> getProducts() {
 		return products;
 	}
 
-	public void setProducts(Products[] products) {
+	public void setProducts(ArrayList<Products> products) {
 		this.products = products;
 	}
 
+	
 	
 	
 }
